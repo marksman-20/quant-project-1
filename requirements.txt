@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+streamlit
+yfinance
+PyPortfolioOpt
+pandas
+numpy
+scipy
+plotly
+matplotlib
+reportlab
+pypdf
+requests
+scikit-learn
