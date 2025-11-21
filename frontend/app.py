@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 from datetime import datetime
 
 # API URL
-API_URL = "http://localhost:8000"
+API_URL = "https://quant-project-1.onrender.com"
 
 st.set_page_config(page_title="Portfolio Optimization Tool", layout="wide")
 
