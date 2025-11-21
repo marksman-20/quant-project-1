@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import Response
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Optional
 import pandas as pd
@@ -10,6 +11,15 @@ from .optimizer import PortfolioOptimizer
 from .report_generator import ReportGenerator
 
 app = FastAPI(title="Portfolio Optimization Engine")
+
+# Add CORS middleware to allow frontend requests
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins (for Streamlit Cloud)
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post("/load-data")
 def load_data_endpoint(request: DataRequest):
